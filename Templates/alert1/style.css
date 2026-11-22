@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+.alert{box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;width:min(760px,96vw);min-height:clamp(230px,34vw,290px);margin:24px auto;padding:clamp(20px,3.5vw,32px) clamp(24px,5.5vw,48px);font-family:'Plus Jakarta Sans',sans-serif;text-align:center;border-radius:16px;background-color:#f6ebd8;background-image:linear-gradient(180deg,rgba(42,18,16,.4) 0%,rgba(42,18,16,.3) 45%,rgba(34,15,14,.62) 100%),url("https://thumbs.dreamstime.com/b/serene-autumnal-japanese-landscape-pagoda-lake-mount-fuji-red-sun-watercolor-art-picturesque-watercolor-painting-japanese-369511803.jpg");background-size:cover;background-position:center;border:2px solid #d65a4f;outline:4px solid #b83227;outline-offset:4px;box-shadow:inset 0 0 0 2px rgba(255,245,228,.45),0 14px 34px rgba(34,15,14,.42);animation:glow 5s ease-in-out infinite alternate}
+.shimmer{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;background:linear-gradient(115deg,transparent 35%,rgba(255,244,214,.16) 47%,rgba(255,250,235,.26) 50%,rgba(255,244,214,.16) 53%,transparent 65%);background-size:240% 100%;animation:skeleton 5.5s ease-in-out infinite}
+.leaves{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.leaves i{position:absolute;top:-32px;width:24px;height:24px;opacity:0;background:url("https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f341.png") center/contain no-repeat;animation:fall 6s linear infinite}
+.leaves i:nth-child(1){left:12%;width:22px;height:22px;animation-duration:5.8s}
+.leaves i:nth-child(2){left:32%;width:26px;height:26px;animation-duration:7.2s;animation-delay:1.4s}
+.leaves i:nth-child(3){left:55%;width:20px;height:20px;animation-duration:6.4s;animation-delay:2.8s}
+.leaves i:nth-child(4){left:74%;width:25px;height:25px;animation-duration:6.8s;animation-delay:.7s}
+.leaves i:nth-child(5){left:88%;width:19px;height:19px;animation-duration:5.4s;animation-delay:2.1s}
+.badge{position:relative;z-index:1;font-size:clamp(1.12rem,2.9vw,1.5rem);font-weight:700;letter-spacing:.14em;color:#ffe29a;text-shadow:0 2px 10px rgba(32,12,10,.95)}
+.template{position:relative;z-index:1;margin:0;font-size:clamp(1.38rem,3.5vw,1.82rem);font-weight:400;line-height:1.35;color:#fff8ec;text-shadow:0 2px 10px rgba(32,12,10,.95)}
+.donator{font-weight:800;color:#ffe29a}
+.amount{position:relative;z-index:1;font-size:clamp(2.5rem,7vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:.02em;color:#fff6d6;text-shadow:0 3px 14px rgba(32,12,10,.95),0 0 18px rgba(184,50,39,.75)}
+.divider{position:relative;z-index:1;width:72%;height:2px;background:linear-gradient(90deg,transparent,#e6b873,#b83227,#e6b873,transparent)}
+.message{position:relative;z-index:1;box-sizing:border-box;width:100%;margin:0;padding:4px 8px;font-size:clamp(1.1rem,2.7vw,1.35rem);font-weight:500;line-height:1.5;color:#fff8ec;word-wrap:break-word;text-shadow:0 2px 10px rgba(32,12,10,.95)}
+@keyframes glow{0%{box-shadow:inset 0 0 0 2px rgba(255,245,228,.42),0 14px 32px rgba(34,15,14,.42),0 0 8px rgba(217,155,82,.16)}100%{box-shadow:inset 0 0 0 2px rgba(255,245,228,.64),0 16px 36px rgba(34,15,14,.48),0 0 22px rgba(230,184,115,.34)}}
+@keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes fall{0%{opacity:0;transform:translate(0,0) rotate(0)}15%{opacity:.85}85%{opacity:.8}100%{opacity:0;transform:translate(-36px,360px) rotate(260deg)}}

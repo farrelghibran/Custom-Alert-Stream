@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+.alert{box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;width:min(760px,96vw);min-height:clamp(230px,34vw,290px);margin:24px auto;padding:clamp(20px,3.5vw,32px) clamp(24px,5.5vw,48px);font-family:'Plus Jakarta Sans',sans-serif;text-align:center;border-radius:16px;background-color:#07120e;background-image:linear-gradient(180deg,rgba(6,18,14,.46) 0%,rgba(6,18,14,.34) 45%,rgba(4,12,10,.7) 100%),url("https://4kwallpapers.com/images/walls/thumbs_3t/18358.jpg");background-size:cover;background-position:center;border:2px solid #34d399;outline:4px solid #10b981;outline-offset:4px;box-shadow:inset 0 0 0 2px rgba(16,185,129,.35),0 14px 36px rgba(3,10,8,.8);animation:glow 5s ease-in-out infinite alternate}
+.shimmer{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;background:linear-gradient(115deg,transparent 35%,rgba(52,211,153,.2) 47%,rgba(236,253,245,.3) 50%,rgba(52,211,153,.2) 53%,transparent 65%);background-size:240% 100%;animation:skeleton 5.3s ease-in-out infinite}
+.aura{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.aura i{position:absolute;bottom:-22px;width:11px;height:11px;opacity:0;border-radius:50%;background:radial-gradient(circle,#fff,#10b981 55%,transparent);box-shadow:0 0 12px #10b981;animation:haki 5.8s ease-in-out infinite}
+.aura i:nth-child(1){left:8%;width:9px;height:9px;animation-duration:5.3s}
+.aura i:nth-child(2){left:21%;width:15px;height:15px;background:radial-gradient(circle,#fff,#a3e635 55%,transparent);box-shadow:0 0 14px #84cc16;animation-duration:6.6s;animation-delay:1.1s}
+.aura i:nth-child(3){left:35%;width:10px;height:10px;animation-duration:5.6s;animation-delay:2.3s}
+.aura i:nth-child(4){left:50%;width:16px;height:16px;animation-duration:6.3s;animation-delay:.7s}
+.aura i:nth-child(5){left:64%;width:12px;height:12px;background:radial-gradient(circle,#fff,#a3e635 55%,transparent);box-shadow:0 0 12px #84cc16;animation-duration:5.8s;animation-delay:1.8s}
+.aura i:nth-child(6){left:77%;width:17px;height:17px;animation-duration:7s;animation-delay:3s}
+.aura i:nth-child(7){left:88%;width:9px;height:9px;animation-duration:5.4s;animation-delay:1.4s}
+.aura i:nth-child(8){left:43%;width:13px;height:13px;animation-duration:6.1s;animation-delay:2.7s}
+.badge{position:relative;z-index:1;font-size:clamp(1.12rem,2.9vw,1.5rem);font-weight:700;letter-spacing:.16em;color:#6ee7b7;text-shadow:0 2px 10px rgba(3,10,8,.95)}
+.template{position:relative;z-index:1;margin:0;font-size:clamp(1.38rem,3.5vw,1.82rem);font-weight:400;line-height:1.35;color:#f0fdf4;text-shadow:0 2px 10px rgba(3,10,8,.95)}
+.donator{font-weight:800;color:#6ee7b7}
+.amount{position:relative;z-index:1;font-size:clamp(2.5rem,7vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:.02em;color:#fff;text-shadow:0 3px 14px rgba(3,10,8,.98),0 0 22px rgba(16,185,129,.85)}
+.divider{position:relative;z-index:1;width:72%;height:2px;background:linear-gradient(90deg,transparent,#6ee7b7,#10b981,#6ee7b7,transparent)}
+.message{position:relative;z-index:1;box-sizing:border-box;width:100%;margin:0;padding:4px 8px;font-size:clamp(1.1rem,2.7vw,1.35rem);font-weight:500;line-height:1.5;color:#f0fdf4;word-wrap:break-word;text-shadow:0 2px 10px rgba(3,10,8,.95)}
+@keyframes glow{0%{box-shadow:inset 0 0 0 2px rgba(16,185,129,.3),0 14px 34px rgba(3,10,8,.75),0 0 10px rgba(16,185,129,.25)}100%{box-shadow:inset 0 0 0 2px rgba(110,231,183,.58),0 16px 40px rgba(3,10,8,.85),0 0 28px rgba(16,185,129,.55)}}
+@keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes haki{0%{opacity:0;transform:translateY(0) scale(.6)}18%{opacity:.92}82%{opacity:.78}100%{opacity:0;transform:translateY(-330px) scale(1.2)}}

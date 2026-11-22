@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+.alert{box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;width:min(760px,96vw);min-height:clamp(230px,34vw,290px);margin:24px auto;padding:clamp(20px,3.5vw,32px) clamp(24px,5.5vw,48px);font-family:'Plus Jakarta Sans',sans-serif;text-align:center;border-radius:12px;background-color:#140906;background-image:linear-gradient(180deg,rgba(20,8,6,.46) 0%,rgba(20,8,6,.34) 45%,rgba(12,4,4,.72) 100%),url("https://4kwallpapers.com/images/walls/thumbs_2t/16729.jpeg");background-size:cover;background-position:center;border:2px solid #ef4444;outline:4px solid #dc2626;outline-offset:4px;box-shadow:0 14px 36px rgba(10,4,2,.84);animation:glow 5s ease-in-out infinite alternate}
+.shimmer{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;background:linear-gradient(115deg,transparent 35%,rgba(251,146,60,.22) 47%,rgba(254,240,138,.32) 50%,rgba(251,146,60,.22) 53%,transparent 65%);background-size:240% 100%;animation:skeleton 5.1s ease-in-out infinite}
+.sparks{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.sparks i{position:absolute;bottom:-20px;width:10px;height:10px;opacity:0;border-radius:50%;background:radial-gradient(circle,#fff,#facc15 55%,transparent);box-shadow:0 0 12px #f97316;animation:fly 5.2s ease-out infinite}
+.sparks i:nth-child(1){left:8%;width:8px;height:8px;animation-duration:4.8s}
+.sparks i:nth-child(2){left:21%;width:14px;height:14px;background:radial-gradient(circle,#fff,#ef4444 55%,transparent);box-shadow:0 0 14px #dc2626;animation-duration:6s;animation-delay:1s}
+.sparks i:nth-child(3){left:35%;width:9px;height:9px;animation-duration:5s;animation-delay:2.1s}
+.sparks i:nth-child(4){left:50%;width:13px;height:13px;background:radial-gradient(circle,#fff,#f97316 55%,transparent);box-shadow:0 0 12px #ea580c;animation-duration:5.7s;animation-delay:.6s}
+.sparks i:nth-child(5){left:64%;width:10px;height:10px;animation-duration:5.3s;animation-delay:1.7s}
+.sparks i:nth-child(6){left:77%;width:15px;height:15px;background:radial-gradient(circle,#fff,#ef4444 55%,transparent);box-shadow:0 0 14px #dc2626;animation-duration:6.3s;animation-delay:2.8s}
+.sparks i:nth-child(7){left:88%;width:8px;height:8px;animation-duration:4.9s;animation-delay:1.3s}
+.sparks i:nth-child(8){left:43%;width:11px;height:11px;animation-duration:5.5s;animation-delay:2.4s}
+.badge{position:relative;z-index:1;font-size:clamp(1.12rem,2.9vw,1.5rem);font-weight:700;letter-spacing:.18em;color:#fdba74;text-shadow:0 2px 10px rgba(10,4,2,.95)}
+.template{position:relative;z-index:1;margin:0;font-size:clamp(1.38rem,3.5vw,1.82rem);font-weight:400;line-height:1.35;color:#fff7ed;text-shadow:0 2px 10px rgba(10,4,2,.95)}
+.donator{font-weight:800;color:#fb923c}
+.amount{position:relative;z-index:1;font-size:clamp(2.5rem,7vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:.02em;color:#fff;text-shadow:0 3px 14px rgba(10,4,2,.98),0 0 22px rgba(234,88,12,.88)}
+.divider{position:relative;z-index:1;width:72%;height:2px;background:linear-gradient(90deg,transparent,#f97316,#ef4444,#facc15,transparent)}
+.message{position:relative;z-index:1;box-sizing:border-box;width:100%;margin:0;padding:4px 8px;font-size:clamp(1.1rem,2.7vw,1.35rem);font-weight:500;line-height:1.5;color:#fff7ed;word-wrap:break-word;text-shadow:0 2px 10px rgba(10,4,2,.95)}
+@keyframes glow{0%{box-shadow:0 14px 34px rgba(10,4,2,.8),0 0 10px rgba(220,38,38,.25)}100%{box-shadow:0 16px 40px rgba(10,4,2,.9),0 0 28px rgba(239,68,68,.56)}}
+@keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes fly{0%{opacity:0;transform:translate(0,0) scale(.6)}15%{opacity:.95}85%{opacity:.8}100%{opacity:0;transform:translate(32px,-330px) scale(1.2)}}

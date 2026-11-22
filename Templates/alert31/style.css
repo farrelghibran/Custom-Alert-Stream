@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+.alert{box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;width:min(760px,96vw);min-height:clamp(230px,34vw,290px);margin:24px auto;padding:clamp(20px,3.5vw,32px) clamp(24px,5.5vw,48px);font-family:'Plus Jakarta Sans',sans-serif;text-align:center;border-radius:14px;background-color:#0b090b;background-image:linear-gradient(180deg,rgba(12,8,10,.48) 0%,rgba(12,8,10,.36) 45%,rgba(8,4,6,.74) 100%),url("https://4kwallpapers.com/images/walls/thumbs_3t/11094.jpg");background-size:cover;background-position:center;border:2px solid #dc2626;outline:4px solid #b91c1c;outline-offset:4px;box-shadow:inset 0 0 0 2px rgba(185,28,28,.35),0 14px 36px rgba(0,0,0,.84);animation:glow 5s ease-in-out infinite alternate}
+.shimmer{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;background:linear-gradient(115deg,transparent 35%,rgba(220,38,38,.18) 47%,rgba(248,250,252,.26) 50%,rgba(220,38,38,.18) 53%,transparent 65%);background-size:240% 100%;animation:skeleton 5.4s ease-in-out infinite}
+.ash{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.ash i{position:absolute;bottom:-20px;width:9px;height:9px;opacity:0;border-radius:50%;background:radial-gradient(circle,#fff,#dc2626 55%,transparent);box-shadow:0 0 10px #b91c1c;animation:ember 6s ease-in-out infinite}
+.ash i:nth-child(1){left:9%;width:8px;height:8px;animation-duration:5.5s}
+.ash i:nth-child(2){left:22%;width:12px;height:12px;background:radial-gradient(circle,#fff,#94a3b8 55%,transparent);box-shadow:0 0 10px #64748b;animation-duration:6.8s;animation-delay:1.1s}
+.ash i:nth-child(3){left:36%;width:9px;height:9px;animation-duration:5.4s;animation-delay:2.3s}
+.ash i:nth-child(4){left:50%;width:13px;height:13px;background:radial-gradient(circle,#fff,#ea580c 55%,transparent);box-shadow:0 0 12px #ea580c;animation-duration:6.5s;animation-delay:.7s}
+.ash i:nth-child(5){left:64%;width:10px;height:10px;background:radial-gradient(circle,#fff,#94a3b8 55%,transparent);box-shadow:0 0 10px #64748b;animation-duration:5.9s;animation-delay:1.9s}
+.ash i:nth-child(6){left:77%;width:14px;height:14px;animation-duration:7.1s;animation-delay:3s}
+.ash i:nth-child(7){left:88%;width:8px;height:8px;animation-duration:5.6s;animation-delay:1.4s}
+.ash i:nth-child(8){left:43%;width:11px;height:11px;background:radial-gradient(circle,#fff,#ea580c 55%,transparent);animation-duration:6.2s;animation-delay:2.7s}
+.badge{position:relative;z-index:1;font-size:clamp(1.12rem,2.9vw,1.5rem);font-weight:700;letter-spacing:.18em;color:#fca5a5;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+.template{position:relative;z-index:1;margin:0;font-size:clamp(1.38rem,3.5vw,1.82rem);font-weight:400;line-height:1.35;color:#f8fafc;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+.donator{font-weight:800;color:#f87171}
+.amount{position:relative;z-index:1;font-size:clamp(2.5rem,7vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:.02em;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.98),0 0 22px rgba(185,28,28,.85)}
+.divider{position:relative;z-index:1;width:72%;height:2px;background:linear-gradient(90deg,transparent,#dc2626,#fca5a5,#dc2626,transparent)}
+.message{position:relative;z-index:1;box-sizing:border-box;width:100%;margin:0;padding:4px 8px;font-size:clamp(1.1rem,2.7vw,1.35rem);font-weight:500;line-height:1.5;color:#f8fafc;word-wrap:break-word;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+@keyframes glow{0%{box-shadow:inset 0 0 0 2px rgba(185,28,28,.3),0 14px 34px rgba(0,0,0,.8),0 0 10px rgba(185,28,28,.24)}100%{box-shadow:inset 0 0 0 2px rgba(252,165,165,.55),0 16px 40px rgba(0,0,0,.9),0 0 28px rgba(220,38,38,.55)}}
+@keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes ember{0%{opacity:0;transform:translate(0,0) scale(.6)}18%{opacity:.9}82%{opacity:.78}100%{opacity:0;transform:translate(-24px,-330px) scale(1.2)}}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+.alert{box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;width:min(760px,96vw);min-height:clamp(230px,34vw,290px);margin:24px auto;padding:clamp(20px,3.5vw,32px) clamp(24px,5.5vw,48px);font-family:'Plus Jakarta Sans',sans-serif;text-align:center;border-radius:14px;background-color:#0a0a0c;background-image:linear-gradient(180deg,rgba(10,10,12,.46) 0%,rgba(10,10,12,.34) 45%,rgba(6,6,8,.72) 100%),url("https://4kwallpapers.com/images/walls/thumbs_3t/23035.jpg");background-size:cover;background-position:center;border:2px solid #f87171;outline:4px solid #ef4444;outline-offset:4px;box-shadow:inset 0 0 0 2px rgba(239,68,68,.35),0 14px 36px rgba(0,0,0,.85);animation:glow 5s ease-in-out infinite alternate}
+.shimmer{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;background:linear-gradient(115deg,transparent 35%,rgba(248,113,113,.2) 47%,rgba(255,245,245,.32) 50%,rgba(248,113,113,.2) 53%,transparent 65%);background-size:240% 100%;animation:skeleton 5s ease-in-out infinite}
+.streaks{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.streaks i{position:absolute;left:-140px;width:110px;height:2px;opacity:0;background:linear-gradient(90deg,transparent,#ef4444,#fca5a5);box-shadow:0 0 10px rgba(239,68,68,.85);animation:rush 2.5s linear infinite}
+.streaks i:nth-child(1){top:16%;width:90px;animation-duration:2.1s}
+.streaks i:nth-child(2){top:32%;width:140px;background:linear-gradient(90deg,transparent,#d4d4d8,#fff);box-shadow:0 0 8px rgba(255,255,255,.75);animation-duration:2.7s;animation-delay:.7s}
+.streaks i:nth-child(3){top:52%;width:105px;animation-duration:2.3s;animation-delay:1.3s}
+.streaks i:nth-child(4){top:68%;width:130px;background:linear-gradient(90deg,transparent,#d4d4d8,#fff);animation-duration:2.6s;animation-delay:.4s}
+.streaks i:nth-child(5){top:82%;width:95px;animation-duration:2s;animation-delay:1.1s}
+.streaks i:nth-child(6){top:42%;width:120px;animation-duration:2.9s;animation-delay:1.8s}
+.badge{position:relative;z-index:1;font-size:clamp(1.12rem,2.9vw,1.5rem);font-weight:700;letter-spacing:.18em;color:#fca5a5;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+.template{position:relative;z-index:1;margin:0;font-size:clamp(1.38rem,3.5vw,1.82rem);font-weight:400;line-height:1.35;color:#fafafa;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+.donator{font-weight:800;color:#f87171}
+.amount{position:relative;z-index:1;font-size:clamp(2.5rem,7vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:.02em;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.98),0 0 22px rgba(239,68,68,.85)}
+.divider{position:relative;z-index:1;width:72%;height:2px;background:linear-gradient(90deg,transparent,#f87171,#ef4444,#f87171,transparent)}
+.message{position:relative;z-index:1;box-sizing:border-box;width:100%;margin:0;padding:4px 8px;font-size:clamp(1.1rem,2.7vw,1.35rem);font-weight:500;line-height:1.5;color:#fafafa;word-wrap:break-word;text-shadow:0 2px 10px rgba(0,0,0,.95)}
+@keyframes glow{0%{box-shadow:inset 0 0 0 2px rgba(239,68,68,.3),0 14px 34px rgba(0,0,0,.8),0 0 10px rgba(239,68,68,.24)}100%{box-shadow:inset 0 0 0 2px rgba(252,165,165,.58),0 16px 40px rgba(0,0,0,.9),0 0 28px rgba(239,68,68,.55)}}
+@keyframes skeleton{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes rush{0%{opacity:0;transform:translateX(0)}15%{opacity:.85}85%{opacity:.75}100%{opacity:0;transform:translateX(940px)}}

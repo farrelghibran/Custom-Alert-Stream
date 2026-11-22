@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Misono Mika Alert</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-[#211233] via-[#140b20] to-[#0a0510] text-[#fdf4ff] font-sans flex flex-col items-center justify-between px-4 py-7 gap-6">
+  <header class="text-center space-y-1">
+    <h1 class="text-lg font-extrabold tracking-widest uppercase text-[#f5d0fe]">Misono Mika Alert Preview</h1>
+    <p class="text-sm opacity-75">Simulasi tampilan overlay Saweria secara langsung</p>
+  </header>
+
+  <main class="w-full flex-1 flex items-center justify-center py-2">
+    <div class="alert">
+      <div class="shimmer"></div>
+      <div class="stars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="badge">TERIMAKASIH</div>
+      <p class="template"><span class="donator" id="outDonator">Sensei</span> telah memberikan dukungan</p>
+      <div class="amount" id="outAmount">Rp 50.000</div>
+      <div class="divider"></div>
+      <p class="message" id="outMessage">Halo Sensei! Terima kasih banyak ya, semangat terus live stream-nya!</p>
+    </div>
+  </main>
+
+  <section class="w-full max-w-[760px] bg-[#190d28]/85 border border-[#a855f7]/35 rounded-2xl p-5 backdrop-blur-md space-y-4 text-[#fdf4ff] shadow-2xl">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="flex flex-col gap-1.5">
+        <label for="inDonator" class="text-xs font-bold tracking-wider uppercase text-[#f5d0fe]">Donatur</label>
+        <input id="inDonator" type="text" value="Sensei" class="w-full px-3 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-[#fdf4ff] focus:outline-none focus:border-[#a855f7]">
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="inAmount" class="text-xs font-bold tracking-wider uppercase text-[#f5d0fe]">Nominal (Rp)</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-3 text-sm font-bold text-[#f5d0fe]">Rp</span>
+          <input id="inAmount" type="number" min="0" step="1000" value="50000" class="w-full pl-10 pr-3 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-[#fdf4ff] focus:outline-none focus:border-[#a855f7]">
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5 sm:col-span-2">
+        <label for="inMessage" class="text-xs font-bold tracking-wider uppercase text-[#f5d0fe]">Pesan</label>
+        <textarea id="inMessage" rows="2" class="w-full px-3 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-[#fdf4ff] focus:outline-none focus:border-[#a855f7] resize-y">Halo Sensei! Terima kasih banyak ya, semangat terus live stream-nya!</textarea>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-2 pt-1">
+      <button type="button" onclick="setPreset('short')" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#a855f7]/25 hover:bg-[#a855f7]/55 border border-[#f5d0fe]/45 transition active:scale-95">Pesan Singkat</button>
+      <button type="button" onclick="setPreset('long')" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#a855f7]/25 hover:bg-[#a855f7]/55 border border-[#f5d0fe]/45 transition active:scale-95">Pesan Panjang</button>
+      <button type="button" onclick="setPreset('empty')" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#a855f7]/25 hover:bg-[#a855f7]/55 border border-[#f5d0fe]/45 transition active:scale-95">Tanpa Pesan</button>
+      <button id="btnBorder" type="button" onclick="toggleBorder()" class="ml-auto px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/15 hover:bg-white/30 border border-white/30 transition active:scale-95">Border: ON</button>
+    </div>
+  </section>
+
+  <section class="w-full max-w-[760px] bg-black/45 border border-white/15 rounded-2xl p-5 backdrop-blur-md space-y-4 shadow-2xl">
+    <div class="flex items-center justify-between gap-2">
+      <h2 class="text-xs font-extrabold tracking-widest uppercase opacity-90">Source Code</h2>
+      <a href="../../index.html" class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 hover:bg-white/20 border border-white/20 transition">&larr; Kembali ke Galeri</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div class="flex flex-col bg-black/50 border border-white/10 rounded-xl overflow-hidden">
+        <div class="px-3.5 py-2 border-b border-white/10 flex items-center justify-between">
+          <span class="text-[11px] font-bold uppercase tracking-wider opacity-80">HTML (packs.html)</span>
+          <button id="copyHtmlBtn" type="button" onclick="copySrc('html')" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white text-black hover:bg-zinc-200 transition">Salin HTML</button>
+        </div>
+        <pre class="p-3 text-[11px] text-emerald-300 font-mono overflow-auto max-h-56 whitespace-pre-wrap break-all"><code id="srcHtml">Memuat...</code></pre>
+      </div>
+      <div class="flex flex-col bg-black/50 border border-white/10 rounded-xl overflow-hidden">
+        <div class="px-3.5 py-2 border-b border-white/10 flex items-center justify-between">
+          <span class="text-[11px] font-bold uppercase tracking-wider opacity-80">CSS (style.css)</span>
+          <button id="copyCssBtn" type="button" onclick="copySrc('css')" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-white text-black hover:bg-zinc-200 transition">Salin CSS</button>
+        </div>
+        <pre class="p-3 text-[11px] text-sky-300 font-mono overflow-auto max-h-56 whitespace-pre-wrap break-all"><code id="srcCss">Memuat...</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const inDonator = document.getElementById('inDonator');
+    const inAmount = document.getElementById('inAmount');
+    const inMessage = document.getElementById('inMessage');
+    const outDonator = document.getElementById('outDonator');
+    const outAmount = document.getElementById('outAmount');
+    const outMessage = document.getElementById('outMessage');
+    const idr = new Intl.NumberFormat('id-ID');
+
+    function formatPrice(val) {
+      const num = Math.max(0, Number(val) || 0);
+      return 'Rp ' + idr.format(num);
+    }
+
+    function sync() {
+      outDonator.textContent = inDonator.value || 'Anonim';
+      outAmount.textContent = formatPrice(inAmount.value);
+      outMessage.textContent = inMessage.value;
+      outMessage.style.display = inMessage.value.trim() ? 'block' : 'none';
+    }
+
+    function setPreset(type) {
+      if (type === 'short') {
+        inDonator.value = 'Sensei';
+        inAmount.value = 50000;
+        inMessage.value = 'Halo Sensei! Terima kasih banyak ya, semangat terus live stream-nya!';
+      } else if (type === 'long') {
+        inDonator.value = 'MisonoMika';
+        inAmount.value = 250000;
+        inMessage.value = 'Terima kasih sudah selalu bikin malam-malam jadi ceria dan seru banget! Sehat selalu, makin lancar rezekinya, dan jangan lupa istirahat ya!';
+      } else {
+        inDonator.value = 'Nagisa';
+        inAmount.value = 100000;
+        inMessage.value = '';
+      }
+      const srcHtml = document.getElementById('srcHtml');
+    const srcCss = document.getElementById('srcCss');
+    const copyHtmlBtn = document.getElementById('copyHtmlBtn');
+    const copyCssBtn = document.getElementById('copyCssBtn');
+    let rawHtml = '';
+    let rawCss = '';
+    let activeCss = '';
+
+    function updateCssCode() {
+      if (!rawCss) return;
+      activeCss = showBorder ? rawCss : rawCss
+        .replace(/border:[^;]+;/g, '')
+        .replace(/outline:[^;]+;/g, '')
+        .replace(/outline-offset:[^;]+;/g, '')
+        .replace(/inset 0 0 0 2px [^,]+,/g, '')
+        .replace(/;animation:glow[^}]+}/g, '}')
+        .replace(/@keyframes glow\{[^}]+\}\}\s*/g, '');
+      srcCss.textContent = activeCss.trim();
+    }
+
+    async function loadSrc() {
+      try {
+        const [h, c] = await Promise.all([fetch('packs.html'), fetch('style.css')]);
+        rawHtml = await h.text();
+        rawCss = await c.text();
+        srcHtml.textContent = rawHtml.trim();
+        updateCssCode();
+      } catch (e) {
+        const m = 'Buka via Live Server / HTTP server untuk memuat source code otomatis.';
+        srcHtml.textContent = m;
+        srcCss.textContent = m;
+      }
+    }
+
+    async function copySrc(t) {
+      const txt = t === 'html' ? rawHtml.trim() : activeCss.trim();
+      const btn = t === 'html' ? copyHtmlBtn : copyCssBtn;
+      if (!txt) return;
+      await navigator.clipboard.writeText(txt);
+      const old = btn.textContent;
+      btn.textContent = 'Tersalin!';
+      setTimeout(() => { btn.textContent = old; }, 1500);
+    }
+
+    loadSrc();
+    sync();
+    }
+
+        const alertBox = document.querySelector('.alert');
+    const btnBorder = document.getElementById('btnBorder');
+    let showBorder = true;
+    function toggleBorder() {
+      showBorder = !showBorder;
+      alertBox.style.border = showBorder ? '' : 'none';
+      alertBox.style.outline = showBorder ? '' : 'none';
+      alertBox.style.animation = showBorder ? '' : 'none';
+      alertBox.style.boxShadow = showBorder ? '' : '0 14px 36px rgba(0,0,0,.6)';
+      btnBorder.textContent = showBorder ? 'Border: ON' : 'Border: OFF';
+      updateCssCode();
+    }
+    inDonator.addEventListener('input', sync);
+    inAmount.addEventListener('input', sync);
+    inMessage.addEventListener('input', sync);
+    const srcHtml = document.getElementById('srcHtml');
+    const srcCss = document.getElementById('srcCss');
+    const copyHtmlBtn = document.getElementById('copyHtmlBtn');
+    const copyCssBtn = document.getElementById('copyCssBtn');
+    let rawHtml = '';
+    let rawCss = '';
+    let activeCss = '';
+
+    function updateCssCode() {
+      if (!rawCss) return;
+      activeCss = showBorder ? rawCss : rawCss
+        .replace(/border:[^;]+;/g, '')
+        .replace(/outline:[^;]+;/g, '')
+        .replace(/outline-offset:[^;]+;/g, '')
+        .replace(/inset 0 0 0 2px [^,]+,/g, '')
+        .replace(/;animation:glow[^}]+}/g, '}')
+        .replace(/@keyframes glow\{[^}]+\}\}\s*/g, '');
+      srcCss.textContent = activeCss.trim();
+    }
+
+    async function loadSrc() {
+      try {
+        const [h, c] = await Promise.all([fetch('packs.html'), fetch('style.css')]);
+        rawHtml = await h.text();
+        rawCss = await c.text();
+        srcHtml.textContent = rawHtml.trim();
+        updateCssCode();
+      } catch (e) {
+        const m = 'Buka via Live Server / HTTP server untuk memuat source code otomatis.';
+        srcHtml.textContent = m;
+        srcCss.textContent = m;
+      }
+    }
+
+    async function copySrc(t) {
+      const txt = t === 'html' ? rawHtml.trim() : activeCss.trim();
+      const btn = t === 'html' ? copyHtmlBtn : copyCssBtn;
+      if (!txt) return;
+      await navigator.clipboard.writeText(txt);
+      const old = btn.textContent;
+      btn.textContent = 'Tersalin!';
+      setTimeout(() => { btn.textContent = old; }, 1500);
+    }
+
+    loadSrc();
+    sync();
+  </script>
+</body>
+
+</html>
